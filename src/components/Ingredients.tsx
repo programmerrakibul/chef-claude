@@ -1,10 +1,20 @@
-export default function Ingredients({ ingredients, toggleSuggestedRecipe }) {
+import type { TIngredient } from "@/types";
+
+interface IIngredientsProps {
+  ingredients: TIngredient[];
+  onToggleRecipe: () => void;
+}
+
+export default function Ingredients({
+  ingredients,
+  onToggleRecipe,
+}: IIngredientsProps): React.JSX.Element {
   return (
     <section>
       <h3 className="ingredient_heading">Ingridents</h3>
       <ul className="ingredient_list">
         {ingredients.map((ingredient) => (
-          <li key={ingredient}>{ingredient}</li>
+          <li key={ingredient.id}>{ingredient.name}</li>
         ))}
       </ul>
 
@@ -15,7 +25,7 @@ export default function Ingredients({ ingredients, toggleSuggestedRecipe }) {
             <p>Generate a recipe from your list of ingredients.</p>
           </div>
           <div className="right">
-            <button onClick={toggleSuggestedRecipe} type="button">
+            <button onClick={onToggleRecipe} type="button">
               Get a recipe
             </button>
           </div>

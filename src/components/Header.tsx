@@ -1,4 +1,4 @@
-import logo from "../assets/chef-claude-icon.png";
+import logo from "@/assets/chef-claude-icon.png";
 
 export default function Header() {
   return (
