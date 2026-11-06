@@ -54,7 +54,7 @@ npm run preview
 
 ## Project Structure
 
-```
+```text
 src/
 ├── components/       # React components
 ├── assets/          # Images and static files
